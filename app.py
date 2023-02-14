@@ -1,7 +1,6 @@
 from flask import Flask, render_template
 
-
-app = Flask("__name__")
+app = Flask(__name__)
 
 # POSTS MOCK
 posts = [
@@ -10,11 +9,11 @@ posts = [
         "texto": "Meu primeiro Post"
     },
     {
-         "titulo": "Post 2",
+        "titulo": "Post 2",
         "texto": "Olha eu aqui de novo"
     },
-    {
-         "titulo": "Post 3",
+       {
+        "titulo": "Post 3",
         "texto": "Novo Post"
     }
 ]
@@ -22,5 +21,3 @@ posts = [
 @app.route('/')
 def exibir_entradas():
     return render_template("exibir_entradas.html", entradas=posts)
-
-    
